@@ -1,0 +1,27 @@
+{
+  "name": "PrintService",
+  "version": "1.0.0",
+  "description": "Proof-of-concept print service for Agilians",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app"
+  },
+  "dependencies": {
+    "bcryptjs": "*",
+    "body-parser": "^1.18.2",
+    "cors": "*",
+    "ejs": "~2.5.7",
+    "escpos": "^2.4.5",
+    "express": "^4.16.2",
+    "html-pdf": "^2.2.0",
+    "jsonwebtoken": "*",
+    "mongoose": "*",
+    "multer": "^1.3.0",
+    "node-printer": "^1.0.2",
+    "passport": "*",
+    "passport-jwt": "*"
+  },
+  "author": "Transit",
+  "license": "ISC"
+}

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CMR</title>
+    <link rel='stylesheet' href='http://localhost:6607/stylesheets/cmr.css'/>
+</head>
+<body>
+<% if (cmr.sender) { %>
+<p id="sender">
+    <%= cmr.sender.company %><br/>
+    <%= cmr.sender.lastName %>
+    <%= cmr.sender.firstName %><br/>
+    <% if (cmr.sender.location){ %>
+    <%= cmr.sender.location.address %><br/>
+    <%= cmr.sender.location.postal %>
+    <%= cmr.sender.location.city %><br/>
+    <% } %>
+    <%= cmr.sender.telephone %><br/>
+    <%= cmr.sender.email %>
+</p>
+<% } %>
+<% if (cmr.receiver) { %>
+<p id="receiver">
+    <%= cmr.receiver.company %><br/>
+    <%= cmr.receiver.lastName %>
+    <%= cmr.receiver.firstName %><br/>
+    <% if (cmr.receiver.location){ %>
+    <%= cmr.receiver.location.address %><br/>
+    <%= cmr.receiver.location.postal %>
+    <%= cmr.receiver.location.city %><br/>
+    <% } %>
+    <%= cmr.receiver.telephone %><br/>
+    <%= cmr.receiver.email %>
+</p>
+<% } %>
+<% if (cmr.reception) { %>
+<p id="reception">
+    <%= cmr.reception.name %><br/>
+    <% if (cmr.reception.location){ %>
+    <%= cmr.reception.location.address %><br/>
+    <%= cmr.reception.location.postal %>
+    <%= cmr.reception.location.city %><br/>
+    <% } %>
+    <%= cmr.reception.time %>
+</p>
+<% } %>
+<% if (cmr.deliveryLocation) { %>
+<p id="delivery">
+    <%= cmr.deliveryLocation.name %><br/>
+    <% if (cmr.deliveryLocation.location){ %>
+    <%= cmr.deliveryLocation.location.address %><br/>
+    <%= cmr.deliveryLocation.location.postal %><br/>
+    <% } %>
+    <%= cmr.deliveryLocation.time %>
+</p>
+<% } %>
+<% if (cmr.mainTransporter) { %>
+<p id="transporter-main">
+    <%= cmr.mainTransporter.company %><br/>
+    <%= cmr.mainTransporter.lastName %>
+    <%= cmr.mainTransporter.firstName %><br/>
+    <% if (cmr.mainTransporter.location){ %>
+    <%= cmr.mainTransporter.location.address %><br/>
+    <%= cmr.mainTransporter.location.postal %>
+    <%= cmr.mainTransporter.location.city %>
+    <% } %>
+    <%= cmr.mainTransporter.telephone %><br/>
+    <%= cmr.mainTransporter.email %>
+</p>
+<% } %>
+<% if (cmr.subTransporter) { %>
+
+<p id="transporter-sub">
+    <%= cmr.subTransporter.company %><br/>
+    <%= cmr.subTransporter.lastName %>
+    <%= cmr.subTransporter.firstName %><br/>
+    <% if (cmr.subTransporter.location){ %>
+    <%= cmr.subTransporter.location.address %><br/>
+    <%= cmr.subTransporter.location.postal %>
+    <%= cmr.subTransporter.location.city %>
+    <% } %>
+    <%= cmr.subTransporter.telephone %><br/>
+    <%= cmr.subTransporter.email %>
+</p>
+<% } %>
+<% if (cmr.successiveTransporter) { %>
+<p id="transporter-successive">
+    <%= cmr.successiveTransporter.company %><br/>
+    <%= cmr.successiveTransporter.lastName %>
+    <%= cmr.successiveTransporter.firstName %><br/>
+    <% if (cmr.successiveTransporter.location){ %>
+    <%= cmr.successiveTransporter.location.address %><br/>
+    <%= cmr.successiveTransporter.location.postal %>
+    <%= cmr.successiveTransporter.location.city %>
+    <% } %>
+    <%= cmr.successiveTransporter.telephone %><br/>
+    <%= cmr.successiveTransporter.email %>
+</p>
+<% } %>
+
+<p id="goods">
+    <% if (cmr.goods){ %>
+    <% for(var i = 0; i < cmr.goods.length; i++) { %>
+
+    <%= cmr.goods[i].name %>
+    <% if (cmr.goods[i].adr) { %>
+    <%= cmr.goods[i].adr %>
+    <% } %>
+    <br/>
+
+    <% } %>
+    <% } %>
+</p>
+<% if (cmr.setup) { %>
+<p id="issue">
+    <%= cmr.setup.date %>
+    <% if (cmr.setup.location){ %>
+    <%= cmr.setup.location.address %>
+    <%= cmr.setup.location.postal %>
+    <%= cmr.setup.location.city %>
+    <% } %>
+    <%= cmr.setup.time %>
+    <br/>
+</p>
+<% } %>
+<% if (cmr.autographs) { %>
+<p id="signature-sender">
+    <%= cmr.autographs.sender %>
+</p>
+
+<p id="signature-transporter">
+    <%= cmr.autographs.transporter %>
+</p>
+
+<p id="signature-receiver">
+    <%= cmr.autographs.receiver %>
+</p>
+<% } %>
+</body>
+</html>

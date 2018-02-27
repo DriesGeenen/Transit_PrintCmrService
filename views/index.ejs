@@ -2,8 +2,8 @@
 <html>
 <head>
     <title>CMR</title>
-    <link rel='stylesheet' href='../public/stylesheets/cmr.css'/>
-    <link rel='stylesheet' href='http://localhost:6607/stylesheets/normalize.css'/>
+    <link rel='stylesheet' href='stylesheets/cmr.css'/>
+
     <link rel='stylesheet' href='http://localhost:6607/stylesheets/cmr.css'/>
 </head>
 <body>
@@ -18,7 +18,7 @@
     <%= cmr.sender.telephone %><br/>
     <%= cmr.sender.email %>
 </p>
-<% } %>
+<%}%>
 <% if (typeof cmr.receiver == 'object' && cmr.receiver) { %>
 <p id="receiver">
     <%= cmr.receiver.company %><br/>
@@ -30,23 +30,23 @@
     <%= cmr.receiver.telephone %><br/>
     <%= cmr.receiver.email %>
 </p>
-<% } %>
+<%}%>
 <% if (typeof cmr.reception == 'object' && cmr.reception) { %>
 <p id="reception">
     <%= cmr.reception.name %><br/>
-    <%= cmr.reception.location.address %><br/>
-    <%= cmr.reception.location.postal %> <%= cmr.reception.location.city %><br/>
+    <%= cmr.reception.location.address%><br/>
+    <%= cmr.reception.location.postal%> <%= cmr.reception.location.city%><br/>
     <%= cmr.reception.time %>
 </p>
-<% } %>
+<%}%>
 <% if (typeof cmr.deliveryLocation == 'object' && cmr.deliveryLocation) { %>
 <p id="delivery">
     <%= cmr.deliveryLocation.name %><br/>
-    <%= cmr.deliveryLocation.location.address %><br/>
-    <%= cmr.deliveryLocation.location.postal %><br/>
+    <%= cmr.deliveryLocation.location.address%><br/>
+    <%= cmr.deliveryLocation.location.postal%><br/>
     <%= cmr.deliveryLocation.time %>
 </p>
-<% } %>
+<%}%>
 <% if (typeof cmr.mainTransporter == 'object' && cmr.mainTransporter) { %>
 <p id="transporter-main">
     <%= cmr.mainTransporter.company %><br/>
@@ -58,19 +58,19 @@
     <%= cmr.mainTransporter.telephone %><br/>
     <%= cmr.mainTransporter.email %>
 </p>
-<% } %>
+<%}%>
 <% if (typeof cmr.subTransporter == 'object' && cmr.subTransporter) { %>
 
-<p id="transporter-sub">
-    <%= cmr.subTransporter.company %><br/>
-    <%= cmr.subTransporter.lastName %>
-    <%= cmr.subTransporter.firstName %><br/>
-    <%= cmr.subTransporter.location.address %><br/>
-    <%= cmr.subTransporter.location.postal %>
-    <%= cmr.subTransporter.location.city %>
-    <%= cmr.subTransporter.telephone %><br/>
-    <%= cmr.subTransporter.email %>
-</p>
+    <p id="transporter-sub">
+        <%= cmr.subTransporter.company %><br/>
+        <%= cmr.subTransporter.lastName %>
+        <%= cmr.subTransporter.firstName %><br/>
+        <%= cmr.subTransporter.location.address %><br/>
+        <%= cmr.subTransporter.location.postal %>
+        <%= cmr.subTransporter.location.city %>
+        <%= cmr.subTransporter.telephone %><br/>
+        <%= cmr.subTransporter.email %>
+    </p>
 <% } %>
 <% if (typeof cmr.successiveTransporter == 'object' && cmr.successiveTransporter) { %>
 <p id="transporter-successive">
@@ -89,41 +89,41 @@
     <% for(var i = 0; i < cmr.goods.length; i++) { %>
 
     <%= cmr.goods[i].name %>
-    <% if (typeof cmr.goods[i].adr == 'object' && cmr.goods[i].adr) { %>
-    <%= cmr.goods[i].adr %>
-    <% } %>
+    <% if (typeof cmr.goods[i].adr == 'object' && cmr.goods[i].adr) {%>
+    <%=cmr.goods[i].adr%>
+    <%}%>
     <br/>
 
-    <% } %>
+<% } %>
 </p>
 <% if (typeof cmr.setup == 'object' && cmr.setup) { %>
 <p id="issue">
-    <%= cmr.setup.date %>
-    <%= cmr.setup.location.address %>
+    <%=cmr.setup.date %>
+    <%=cmr.setup.location.address %>
     <%= cmr.setup.location.postal %>
     <%= cmr.setup.location.city %>
     <%= cmr.setup.time %>
     <br/>
 </p>
-<% } %>
+<%}%>
 <% if (typeof cmr.autographs.sender == 'object' && cmr.autographs.sender) { %>
 <p id="signature-sender">
-    <%= cmr.autographs.sender %>
+    <%= cmr.autographs.sender%>
 </p>
-<% } %>
+<%}%>
 <% if (typeof cmr.autographs.sender == 'object' && cmr.autographs.sender) { %>
 
 <p id="signature-transporter">
-    <%= cmr.autographs.transporter %>
+    <%= cmr.autographs.transporter%>
 
 </p>
-<% } %>
+<%}%>
 <% if (typeof cmr.autographs.sender == 'object' && cmr.autographs.sender) { %>
 
 <p id="signature-receiver">
-    <%= cmr.autographs.receiver %>
+    <%= cmr.autographs.receiver%>
 
 </p>
-<% } %>
+<%}%>
 </body>
 </html>
